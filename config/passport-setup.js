@@ -17,7 +17,7 @@ callbackURL: 'https://shopper-pranjal.herokuapp.com/oauth/google/redirect'
 
 //passport callback function ;
 console.log('passport call back function fired') ;
-//console.log(profile);
+console.log(profile);
 
 //console.log('photo link is',profile.photos[0].value);
 addUser.findOne({googleid:profile.id}).then((currentUser)=>{
