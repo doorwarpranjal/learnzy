@@ -1,4 +1,4 @@
-const port  = 8000 ;
+const port  = process.env.PORT||8000 ;
 const express = require('express');
 const mongodb = require('mongodb');
 const db = require('./config/connection.js') ;
