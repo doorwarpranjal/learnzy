@@ -10,7 +10,7 @@ passport.use(new GoogleStrategy({
 
 clientID : keys.google.clientID,
 clientSecret : keys.google.clientSecret,
-callbackURL: 'http://localhost:8000/oauth/google/redirect'
+callbackURL: 'https://shopper-pranjal.herokuapp.com/oauth/google/redirect'
 
 
 },function(accessToken, refreshToken, profile,done){
