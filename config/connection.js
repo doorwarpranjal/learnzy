@@ -3,7 +3,7 @@ const keys = require('./keys');
 
 
 
-mongoose.connect(process,env.mongouri,{useNewUrlParser : false}) ;
+mongoose.connect(process.env.mongouri,{useNewUrlParser : false}) ;
 
 mongoose.set('useFindAndModify',false);
 
