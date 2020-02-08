@@ -1,0 +1,28 @@
+html,body{
+  height: 100vh;
+   background-color: #40407a;
+   color : white ;
+   text-align: center;
+   width: 100vw ;
+   overflow-x: hidden;
+   box-sizing: border-box;
+   }
+
+.product-container{
+margin-bottom: 10vh;
+}
+.product-container .row{
+margin-left: 4vw;
+}
+
+.product-container .row .col-lg-4{
+margin-top : 10vh ;
+}
+
+.product-container .card-title,.card-text{
+color: black;
+}
+
+.price-tag{
+  color: black ;
+}

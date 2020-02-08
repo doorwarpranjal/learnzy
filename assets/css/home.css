@@ -1,0 +1,52 @@
+body{
+  height: 100vh;
+   background-color: #40407a;
+   color : white ;
+   text-align: center;
+   width: 100vw ;
+   overflow-x: hidden;
+   box-sizing: border-box;
+   background-image: url('../images/bg1.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+   }
+
+#main-title{
+  margin-top: 10% ;
+  margin-left: -5% ;
+}
+
+#main-title button{
+margin-top: 20px;
+}
+
+#main-title h1{
+font-size: 70px;
+font-family: 'Helvetica Neue',sans-serif;
+}
+
+#main-title h6{
+  margin-top: 25px;
+font-size: 20px;
+font-family: 'Open Sans', sans-serif;
+line-height: 25px;
+letter-spacing: 1px;
+}
+
+#main-title button{
+background-color: #bf3bc2d1 ;
+color: white ;
+border: none ;
+height: 40px;
+width: 120px;
+border-radius: 10px 10px 10px 10px ;
+}
+
+.navbar{
+  background-color: #6e179b78 ;
+}
+
+#main-title button:hover{
+  background-color: #3bb0c2bd;
+  transition: all 0.5s ;
+}

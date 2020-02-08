@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Shopper
+    </title>
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/addproductpage.css">
+
+  </head>
+  <body>
+
+<%- include('partials/navbar')%>
+
+<center><h3>Add Product to database</h3></center>
+
+    <div class="form">
+          <form method="post" action="/products/addproduct">
+             <div class="username">
+                <div class="left">
+                   <i class="fas fa-user"></i>
+                </div>
+                <div class="right">
+                   <input type="text" placeholder="Product Name" name="name">
+                </div>
+             </div>
+
+             <div class="username">
+                <div class="left">
+                   <i class="fas fa-user"></i>
+                </div>
+                <div class="right">
+                   <input type="text" placeholder="Product Description" name="description">
+                </div>
+             </div>
+
+             <div class="username">
+                <div class="left">
+                   <i class="fas fa-user"></i>
+                </div>
+                <div class="right">
+                   <input type="number" placeholder="Price" name="price">
+                </div>
+             </div>
+
+
+             <div class="username">
+                <div class="left">
+                   <i class="fas fa-user"></i>
+                </div>
+                <div class="right">
+                   <input type="text" placeholder="Image Path" name="imagepath">
+                </div>
+             </div>
+
+
+
+             <div class="sign-up">
+                <input type="submit" value="Add product">
+             </div>
+          </form>
+       </div>
+
+
+  </body>
+</html>
