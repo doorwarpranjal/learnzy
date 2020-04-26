@@ -1,0 +1,13 @@
+.navbar{
+  background-color :#6e179b78;
+}
+
+html,body{
+  height: 100vh;
+   background-color: #40407a;
+   color : white ;
+   text-align: center;
+   width: 100vw ;
+   overflow-x: hidden;
+   box-sizing: border-box;
+   }

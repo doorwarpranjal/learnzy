@@ -23,7 +23,7 @@ products : productslist
 
 
 module.exports.displayaddproductpage = function(req,res){
-
+req.flash('notify', 'This is a test notification.')
 return res.render('../views/addproduct');
 
 }

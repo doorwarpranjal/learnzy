@@ -2,8 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> Shopper
-    </title>
+    <title> Learnzy : Fun Learning !</title>
     <!-- Bootstrap link  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -18,7 +17,7 @@
 <center><h3>OAuth login</h3></center>
 
     <div class="form">
-          <form method="post" action="">
+          <form method="post" action="/oauth/local">
              <div class="username">
                 <div class="left">
                    <i class="fa fa-user"></i>
@@ -33,7 +32,7 @@
                    <i class="fa fa-lock"></i>
                 </div>
                 <div class="right">
-                   <input type="passport" placeholder="password" name="password">
+                   <input type="password" placeholder="password" name="password">
                 </div>
              </div>
 
@@ -41,13 +40,13 @@
              <div class="sign-up">
                 <input type="submit" value="Login">
              </div>
-
+           <p id="login-message-box"><%=message%><p>
           </form>
+
+
           <div class="passport-login">
              <a href="oauth/google" id="google-login-button"><button><i class="fa fa-google"></i> &nbsp Login with Google</button></a>
           </div>
        </div>
-
-
   </body>
 </html>

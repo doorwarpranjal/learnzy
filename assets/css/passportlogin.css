@@ -106,3 +106,10 @@ border-radius: 10px;
   transform: translateX(-37%);
   margin-top: 20px;
 }
+
+#login-message-box{
+color: white ;
+margin-left: 15%;
+font-family: 'Open Sans',sans-serif;
+
+}

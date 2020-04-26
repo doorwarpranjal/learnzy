@@ -6,7 +6,10 @@ const Schema = mongoose.Schema ;
 
 const userSchema = new Schema({
 
-username : String,
+name : String,    
+email : String,
+password : String,
+phone : String,
 googleid : String,
 imagepath : String
 });

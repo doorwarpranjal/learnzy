@@ -10,3 +10,7 @@ module.exports = {
 
 }, mongodb : { dbURI : 'mongodb+srv://admin:admin@shopperapp-nefla.mongodb.net/test?retryWrites=true&w=majority'}
 } ;
+
+
+//heroku config:set MONGODB_URI=mongodb://your-user:your-pass@host:port/db-name
+//run this command to connect mlab to heroku hosting

@@ -2,43 +2,92 @@ const passport  = require('passport');
 const GoogleStrategy = require('passport-google-oauth20');
 const keys = require('./keys');
 const addUser = require('../models/addUser');
+const LocalStrategy = require('passport-local').Strategy;
+
+passport.serializeUser((user,done)=>{
+  done(null,user.id);
+});
+
+// used to deserialize the user
+passport.deserializeUser(function(id, done) {
+    addUser.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+
+
+
+
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    addUser.findOne({ email: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (user.password!=password) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+
+      return done(null, user);
+    
+      
+    });
+  }
+));
+
+
+
+
+
+
+
+
+
 
 
 passport.use(new GoogleStrategy({
 
-//options for strategy
+//options for strategy  callback url when running localhost    http://localhost:8000/oauth/google/redirect
+
+//callback for heroku app  https://shopper-pranjal.herokuapp.com/oauth/google/redirect
 
 clientID : keys.google.clientID,
 clientSecret : keys.google.clientSecret,
-callbackURL: 'https://shopper-pranjal.herokuapp.com/oauth/google/redirect'
+callbackURL: 'http://localhost:8000/oauth/google/redirect'
 
 
 },function(accessToken, refreshToken, profile,done){
 
-//passport callback function ;
-console.log('passport call back function fired') ;
-console.log(profile);
-
-//console.log('photo link is',profile.photos[0].value);
 addUser.findOne({googleid:profile.id}).then((currentUser)=>{
+
+//console.log(currentUser);
 
 if(currentUser){
 //if user already exists do nothing
   console.log('user exists') ;
+  done(null,currentUser);
 }
-
 
 else{
 //save the user to database if not exits
   addUser.create({
-  username : profile.displayName,
+  name : profile.displayName,  
+  email : profile.displayName,
+  password : profile.displayName+"@100",
+  phone : 'none',
   googleid : profile.id ,
   imagepath : profile.photos[0].value
+  
+
   },function(err,newuser){
   if(err){console.log('Error in saving user to database') ;}
 
 
     console.log('User data saved to database')
+done(null,newuser);
+
   }) ;
 
 }//end of else statement
@@ -49,7 +98,3 @@ else{
 
 
 } )); //end of google strategy passport use mthod
-
-
-//id    637399525868-p2mv1lgjm5qi77ahpv6kiu4mffvt305s.apps.googleusercontent.com
-//scret  vmnqaahXeNJF-aWFENVQSuQf
