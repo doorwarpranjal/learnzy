@@ -37,9 +37,7 @@ else{
     if(err){console.log('Error in saving user to database in oauthcontroller method')}
 
 else{
-
-
-    console.log(newUser) ;
+   
     console.log('saved user to database in oauthcontroller method') ;
     res.send('<h2>Signed up Successful </h2>')
 }

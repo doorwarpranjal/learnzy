@@ -6,6 +6,7 @@ const addProduct = require('../models/addProduct');
 
 module.exports.displayproducts = function(req,res){
 
+
 addProduct.find({},function(err,productslist){
 
 if(err){console.log('error in finding products in database'); return ;}
@@ -14,7 +15,6 @@ if(err){console.log('error in finding products in database'); return ;}
 
 return res.render('../views/productpage',{
 products : productslist
-}) ;
 
 
 });
