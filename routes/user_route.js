@@ -52,23 +52,11 @@ router.post('/profile/uploadimage/upload',upload.single('avatar'),function(req,r
 });
 
 
-// route connected to setNewPassword.ejs 
-router.get('/profile/setNewPassword',authcheck,user_controller.setNewPassword) ;
-router.post('/profile/setNewPassword',authcheck,(req,res)=>{
-  var NewPassword=req.body.NewPassword;
-  var confirmPassword=req.body.confirmPassword;
-if(confirmPassword===NewPassword){
-  //if confirm password and new password are equal then update password in adduser(mongodb)
-addUser.findOneAndUpdate({email:req.user.email},{password:NewPassword}).exec((err,user_data)=>{
-  if(err) throw err;
-res.render("./setNewPassword",{msg:" Password changed",alert:"primary"})
+// route connected to display displaySetNewPasswordPage 
+router.get('/profile/setNewPassword',authcheck,user_controller.displaySetNewPasswordPage) ;
 
-})
-}
-else
 
-res.render("./setNewPassword",{msg:" Password and confirm password does not match",alert:"warning"})
-}
-) ;
+//this method will get the users data for changing the current password
+router.post('/profile/setNewPassword',authcheck,user_controller.setNewPassword) ;
 
 module.exports = router ;
