@@ -14,11 +14,12 @@ if(err){console.log('error in finding products in database'); return ;}
 //console.log('Product is ' , productslist);
 
 return res.render('../views/productpage',{
+  
 products : productslist
 
+  });
 
-});
-
+ } ) ;
 }
 
 
