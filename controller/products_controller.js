@@ -19,7 +19,7 @@ products : productslist
 
 });
 
-}
+} ) ;}
 
 
 module.exports.displayaddproductpage = function(req,res){
